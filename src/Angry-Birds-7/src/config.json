@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "wood",
-			"path": "./assets/images/wood2.png",
+			"path": "./assets/images/wood.png",
 			"width": 512,
 			"height": 512
 		}
