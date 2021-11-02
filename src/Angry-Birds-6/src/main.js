@@ -20,6 +20,9 @@
  *
  * Music
  * https://freesound.org/people/tyops/sounds/348166/
+ *
+ * Font
+ * https://www.dafont.com/angrybirds.font
  */
 
 import GameStateName from "./enums/GameStateName.js";
