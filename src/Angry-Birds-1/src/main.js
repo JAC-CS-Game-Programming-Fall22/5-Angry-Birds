@@ -16,13 +16,13 @@
  * game looks like and how to use a subset of the physics library's features.
  *
  * Art
- * https://www.spriters-resource.com/mobile/angrybirds/
+ * @see https://www.spriters-resource.com/mobile/angrybirds/
  *
  * Music
- * https://freesound.org/people/tyops/sounds/348166/
+ * @see https://freesound.org/people/tyops/sounds/348166/
  *
  * Font
- * https://www.dafont.com/angrybirds.font
+ * @see https://www.dafont.com/angrybirds.font
  */
 
 import GameStateName from "./enums/GameStateName.js";

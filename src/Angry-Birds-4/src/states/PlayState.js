@@ -58,7 +58,7 @@ export default class PlayState extends State {
 		 * we can be sure that the Matter world will be updated at the
 		 * same rate as our canvas animation.
 		 *
-		 * https://brm.io/matter-js/docs/classes/Engine.html#method_update
+		 * @see https://brm.io/matter-js/docs/classes/Engine.html#method_update
 		 */
 		Engine.update(engine);
 

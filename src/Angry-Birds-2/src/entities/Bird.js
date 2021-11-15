@@ -10,8 +10,8 @@ export default class Bird extends Circle {
 	 * the world's physics. We've given the bird a high restitution value
 	 * so that it is bouncy. The label will help us manage this body later.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_restitution
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_label
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_restitution
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_label
 	 *
 	 * @param {number} x
 	 * @param {number} y

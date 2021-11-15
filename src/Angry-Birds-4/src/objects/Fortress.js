@@ -36,7 +36,7 @@ export default class Fortress {
 	}
 
 	/**
-	 * https://brm.io/matter-js/docs/classes/Engine.html#events
+	 * @see https://brm.io/matter-js/docs/classes/Engine.html#events
 	 */
 	registerCollisionEvents() {
 		Events.on(engine, EventName.CollisionStart, (event) => {

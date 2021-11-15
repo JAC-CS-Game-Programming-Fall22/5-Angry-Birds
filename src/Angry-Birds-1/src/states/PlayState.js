@@ -33,7 +33,7 @@ export default class PlayState extends State {
 		 * for allowing user interaction, providing the ability to move bodies via
 		 * the mouse or touch.
 		 *
-		 * https://brm.io/matter-js/docs/classes/MouseConstraint.html
+		 * @see https://brm.io/matter-js/docs/classes/MouseConstraint.html
 		 */
 		Composite.add(world, MouseConstraint.create(engine, {
 			mouse: Mouse.create(canvas),
@@ -46,7 +46,7 @@ export default class PlayState extends State {
 		 * we can be sure that the Matter world will be updated at the
 		 * same rate as our canvas animation.
 		 *
-		 * https://brm.io/matter-js/docs/classes/Engine.html#method_update
+		 * @see https://brm.io/matter-js/docs/classes/Engine.html#method_update
 		 */
 		Engine.update(engine);
 

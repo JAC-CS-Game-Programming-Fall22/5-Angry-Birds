@@ -51,7 +51,7 @@ export default class Fortress {
 	}
 
 	/**
-	 * https://brm.io/matter-js/docs/classes/Engine.html#events
+	 * @see https://brm.io/matter-js/docs/classes/Engine.html#events
 	 */
 	registerCollisionEvents() {
 		Events.on(engine, EventName.CollisionStart, (event) => {
@@ -64,7 +64,7 @@ export default class Fortress {
 	 *
 	 * @param {object} event
 	 */
-	 onCollisionStart(event) {
+	onCollisionStart(event) {
 		const { bodyA, bodyB } = event.pairs[0];
 
 		/**
@@ -88,7 +88,7 @@ export default class Fortress {
 	 * @param {object} bodyB A Matter.js body.
 	 * @returns The damaged body.
 	 */
-	 checkValidCollisions(bodyA, bodyB) {
+	checkValidCollisions(bodyA, bodyB) {
 		if (this.didFirstBodyDamageSecond(bodyA, bodyB)) {
 			this.bodiesToRemove.push(bodyB);
 		}

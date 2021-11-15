@@ -37,8 +37,8 @@ export default class Slingshot {
 	 * (or a body and a fixed world-space position). The stiffness
 	 * of constraints can be modified to create springs or elastic.
 	 *
-	 * https://brm.io/matter-js/demo/#constraints
-	 * https://brm.io/matter-js/docs/classes/Constraint.html
+	 * @see https://brm.io/matter-js/demo/#constraints
+	 * @see https://brm.io/matter-js/docs/classes/Constraint.html
 	 *
 	 * @param {BirdQueue} birdQueue
 	 */
@@ -219,7 +219,7 @@ export default class Slingshot {
 
 		/**
 		 * Set the velocity of the dummy bird using the approximated velocities.
-		 * https://github.com/liabru/matter-js/issues/603#issuecomment-385249712
+		 * @see https://github.com/liabru/matter-js/issues/603#issuecomment-385249712
 		 */
 		Body.setVelocity(bird, Vector.create(velocityX, velocityY));
 
@@ -230,7 +230,7 @@ export default class Slingshot {
 			 * not running the Matter engine itself right now. This value
 			 * is the default value the Matter engine uses for gravity.
 			 *
-			 * https://brm.io/matter-js/docs/classes/Engine.html#property_gravity.scale
+			 * @see https://brm.io/matter-js/docs/classes/Engine.html#property_gravity.scale
 			 */
 			bird.force.y += bird.mass * engine.gravity.scale;
 
@@ -250,8 +250,8 @@ export default class Slingshot {
 	 * (or a body and a fixed world-space position). The stiffness
 	 * of constraints can be modified to create springs or elastic.
 	 *
-	 * https://brm.io/matter-js/demo/#constraints
-	 * https://brm.io/matter-js/docs/classes/Constraint.html
+	 * @see https://brm.io/matter-js/demo/#constraints
+	 * @see https://brm.io/matter-js/docs/classes/Constraint.html
 	 */
 	initializeSling() {
 		this.sling = Constraint.create({
@@ -270,7 +270,7 @@ export default class Slingshot {
 	 * for allowing user interaction, providing the ability to move bodies via
 	 * the mouse or touch.
 	 *
-	 * https://brm.io/matter-js/docs/classes/MouseConstraint.html
+	 * @see https://brm.io/matter-js/docs/classes/MouseConstraint.html
 	 */
 	initializeMouseConstraint() {
 		this.mouseWasReleased = false;
@@ -298,7 +298,7 @@ export default class Slingshot {
 	}
 
 	/**
-	 * https://brm.io/matter-js/docs/classes/MouseConstraint.html#events
+	 * @see https://brm.io/matter-js/docs/classes/MouseConstraint.html#events
 	 */
 	registerMouseEvents(mouseConstraint) {
 		Events.on(mouseConstraint, EventName.MouseDragStart, (event) => {

@@ -13,10 +13,10 @@ export default class Bird extends Circle {
 	 * We've set the density to a value higher than the block's default density
 	 * of 0.001 so that the bird can actually knock blocks over.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_restitution
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_label
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_density
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_restitution
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_label
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_density
 	 *
 	 * @param {number} x
 	 * @param {number} y

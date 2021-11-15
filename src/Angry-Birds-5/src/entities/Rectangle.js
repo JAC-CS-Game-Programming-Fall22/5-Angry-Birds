@@ -12,7 +12,7 @@ export default class Rectangle extends GameEntity {
 	 * We'll work in top-left coordinates as usual but
 	 * offset them when giving/retrieving to/from Matter.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Bodies.html#method_rectangle
+	 * @see https://brm.io/matter-js/docs/classes/Bodies.html#method_rectangle
 	 *
 	 * @param {number} x
 	 * @param {number} y

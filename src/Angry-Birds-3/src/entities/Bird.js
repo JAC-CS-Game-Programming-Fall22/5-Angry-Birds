@@ -11,9 +11,9 @@ export default class Bird extends Circle {
 	 * so that it is bouncy. The label will help us manage this body later.
 	 * The collision filter ensures that birds cannot collide with eachother.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_restitution
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_label
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_restitution
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_label
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
 	 *
 	 * @param {number} x
 	 * @param {number} y

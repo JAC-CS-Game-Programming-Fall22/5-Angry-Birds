@@ -55,7 +55,7 @@ export default class GameEntity {
 	/**
 	 * Utility to clone a body based on a set of vertices.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Bodies.html#method_fromVertices
+	 * @see https://brm.io/matter-js/docs/classes/Bodies.html#method_fromVertices
 	 *
 	 * @param {object} body A Matter.js body.
 	 * @returns A cloned Matter.js body.

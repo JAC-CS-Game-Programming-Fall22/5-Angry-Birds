@@ -16,9 +16,9 @@ export default class Pig extends Circle {
 	 * blocks over. We've also given the pig a medium restitution
 	 * value so that it is somewhat bouncy.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_density
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_restitution
-	 * https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_density
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_restitution
+	 * @see https://brm.io/matter-js/docs/classes/Body.html#property_collisionFilter
 	 *
 	 * @param {number} x
 	 * @param {number} y

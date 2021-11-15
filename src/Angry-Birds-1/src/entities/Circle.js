@@ -11,7 +11,7 @@ export default class Circle extends GameEntity {
 	 * Both Canvas and Matter use the center of their circles
 	 * for the origin so we don't have to worry about offsetting.
 	 *
-	 * https://brm.io/matter-js/docs/classes/Bodies.html#method_circle
+	 * @see https://brm.io/matter-js/docs/classes/Bodies.html#method_circle
 	 *
 	 * @param {number} x
 	 * @param {number} y
@@ -25,9 +25,9 @@ export default class Circle extends GameEntity {
 	}
 
 	update(dt) {
-if (this.didGoOffScreen()) {
-	this.shouldCleanUp = true;
-}
+		if (this.didGoOffScreen()) {
+			this.shouldCleanUp = true;
+		}
 
 		super.update(dt);
 	}
@@ -52,7 +52,7 @@ if (this.didGoOffScreen()) {
 		context.restore();
 	}
 
-didGoOffScreen() {
-	return this.body.position.x + this.radius < 0 || this.body.position.x - this.radius > CANVAS_WIDTH;
-}
+	didGoOffScreen() {
+		return this.body.position.x + this.radius < 0 || this.body.position.x - this.radius > CANVAS_WIDTH;
+	}
 }
