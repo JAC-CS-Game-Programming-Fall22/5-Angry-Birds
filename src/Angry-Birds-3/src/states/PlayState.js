@@ -18,9 +18,7 @@ const {
 export default class PlayState extends State {
 	constructor() {
 		super();
-	}
-
-	enter() {
+		
 		this.birdQueue = new BirdQueue([
 			BirdType.Red,
 			BirdType.Red,

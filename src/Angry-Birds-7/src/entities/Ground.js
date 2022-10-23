@@ -41,6 +41,8 @@ export default class Ground extends Rectangle {
 	}
 
 	render() {
+		super.render();
+		
 		for (let i = 0; i < CANVAS_WIDTH / Ground.GRASS.width; i++) {
 			this.sprites[0].render(i * Ground.GRASS.width, CANVAS_HEIGHT - Ground.GRASS.height);
 		}

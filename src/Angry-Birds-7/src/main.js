@@ -29,6 +29,8 @@ import GameStateName from "./enums/GameStateName.js";
 import Game from "../lib/Game.js";
 import {
 	canvas,
+	CANVAS_HEIGHT,
+	CANVAS_WIDTH,
 	context,
 	fonts,
 	images,
@@ -37,6 +39,14 @@ import {
 	stateMachine,
 } from "./globals.js";
 import PlayState from "./states/PlayState.js";
+
+// Set the dimensions of the play area.
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
+canvas.setAttribute('tabindex', '1'); // Allows the canvas to receive user input.
+
+// Now that the canvas element has been prepared, we can add it to the DOM.
+document.body.appendChild(canvas);
 import GameOverState from "./states/GameOverState.js";
 import VictoryState from "./states/VictoryState.js";
 
@@ -45,7 +55,6 @@ const {
 	images: imageDefinitions,
 	fonts: fontDefinitions,
 	sounds: soundDefinitions,
-	// @ts-ignore
 } = await fetch('./src/config.json').then((response) => response.json());
 
 // Load all the assets from their definitions.

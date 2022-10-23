@@ -6,6 +6,8 @@ import ImageName from "../enums/ImageName.js";
 import GameEntity from "../entities/GameEntity.js";
 import {
 	canvas,
+	CANVAS_HEIGHT,
+	CANVAS_WIDTH,
 	context,
 	engine,
 	images,
@@ -47,6 +49,7 @@ export default class Slingshot {
 		this.bird = birdQueue.dequeue();
 		this.sprites = Slingshot.generateSprites();
 		this.wasLaunched = false;
+		this.trajectoryPoints = [];
 
 		this.initializeSling();
 		this.initializeTrajectory();
@@ -289,7 +292,6 @@ export default class Slingshot {
 	 * be used to display the bird's approximate trajectory.
 	 */
 	initializeTrajectory() {
-		this.trajectoryPoints = [];
 		this.shouldCalculateTrajectory = false;
 
 		for (let i = 0; i < Slingshot.TRAJECTORY.points; i++) {

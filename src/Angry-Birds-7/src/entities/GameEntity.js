@@ -88,19 +88,28 @@ export default class GameEntity {
 		return body.label === type;
 	}
 
+	/**
+	 * Constructs an array of sprites given an array
+	 * of measurements (x, y, width, height).
+	 *
+	 * @param {array} measurements
+	 * @returns An array of Sprite objects.
+	 */
 	static generateSprites(measurements) {
-		const sprites = [];
-
-		measurements.forEach((measurement) => {
-			sprites.push(new Sprite(
+		/**
+		 * The map() method creates a new array populated with the results
+		 * of calling a provided function on every element in the calling array.
+		 *
+		 * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+		 */
+		return measurements.map(measurement =>
+			new Sprite(
 				images.get(ImageName.Sprites),
 				measurement.x,
 				measurement.y,
 				measurement.width,
 				measurement.height
-			));
-		});
-
-		return sprites;
+			)
+		);
 	}
 }

@@ -1,16 +1,20 @@
 import StateMachine from "../lib/StateMachine.js";
 
-export const canvas = document.querySelector('canvas');
-export const context = canvas.getContext('2d');
-
-export const CANVAS_WIDTH = canvas.width;
-export const CANVAS_HEIGHT = canvas.height;
+export const canvas = document.createElement('canvas');
+export const context = canvas.getContext('2d') || new CanvasRenderingContext2D();
+export const CANVAS_WIDTH = 2000;
+export const CANVAS_HEIGHT = 720;
 
 export const keys = {};
 export const stateMachine = new StateMachine();
 
+/**
+ * The physics engine we're going to use for this game.
+ * We're not importing it anywhere because it is declared globally in index.html.
+ *
+ * @see https://brm.io/matter-js
+ */
 // @ts-ignore
-// https://brm.io/matter-js
 export const matter = Matter;
 
 /**

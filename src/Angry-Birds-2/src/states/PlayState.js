@@ -16,9 +16,7 @@ const {
 export default class PlayState extends State {
 	constructor() {
 		super();
-	}
 
-	enter() {
 		this.slingshot = new Slingshot();
 		this.ground = new Ground();
 	}

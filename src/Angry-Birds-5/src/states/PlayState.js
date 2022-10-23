@@ -25,18 +25,32 @@ const {
 export default class PlayState extends State {
 	constructor() {
 		super();
+
+		this.startX = 1500;
+
+		const blocks = [
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 0.25, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 4.75, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 2.5, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height * 2, Size.Large, Block.ANGLE_HORIZONTAL),
+		];
+		const pigs = [
+			new Pig(this.startX + 110, CANVAS_HEIGHT - Ground.MEASUREMENTS.height),
+		];
+
+		this.birdQueue = new BirdQueue([BirdType.Red, BirdType.Red]);
+		this.slingshot = new Slingshot(this.birdQueue);
+		this.fortress = new Fortress(blocks, pigs);
+		this.ground = new Ground();
 	}
 
 	enter() {
-		const startX = 1500;
-
 		const blocks = [
-			new Block(startX + Block.DIMENSIONS[Size.Medium].width * 0.25, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
-			new Block(startX + Block.DIMENSIONS[Size.Medium].width * 4.75, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
-			new Block(startX + Block.DIMENSIONS[Size.Medium].width * 2.5, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height * 2, Size.Large, Block.ANGLE_HORIZONTAL),
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 0.25, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 4.75, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height, Size.Medium),
+			new Block(this.startX + Block.DIMENSIONS[Size.Medium].width * 2.5, CANVAS_HEIGHT - Ground.MEASUREMENTS.height - Block.DIMENSIONS[Size.Medium].height * 2, Size.Large, Block.ANGLE_HORIZONTAL),
 		];
 		const pigs = [
-			new Pig(startX + 110, CANVAS_HEIGHT - Ground.MEASUREMENTS.height),
+			new Pig(this.startX + 110, CANVAS_HEIGHT - Ground.MEASUREMENTS.height),
 		];
 
 		this.birdQueue = new BirdQueue([BirdType.Red, BirdType.Red]);

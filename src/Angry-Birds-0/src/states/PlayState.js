@@ -15,9 +15,7 @@ const {
 export default class PlayState extends State {
 	constructor() {
 		super();
-	}
 
-	enter() {
 		this.ground = new Ground();
 	}
 

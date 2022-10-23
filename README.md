@@ -1,6 +1,6 @@
 # 🐦 Angry Birds
 
-You can view the pretty version of the notes [here](https://jac-cs-game-programming-f21.github.io/Notes/#/6-Angry-Birds/).
+You can view the pretty version of the notes [here](https://jac-cs-game-programming-fall22.github.io/Notes/#/5-Angry-Birds/).
 
 ## 🎯 Objectives
 
@@ -16,21 +16,17 @@ This "clone" of Angry Birds doesn't contain nearly the plethora of features as t
 
 ## 🔨 Setup
 
-1. Clone the repo (or download the zip) for today's lecture, which you can find [here](https://github.com/JAC-CS-Game-Programming-F21/6-Angry-Birds).
+1. Clone the repo (or download the zip) for today's lecture, which you can find [here](https://github.com/JAC-CS-Game-Programming-Fall22/5-Angry-Birds).
 2. Open the repo in Visual Studio Code.
-3. Instead of running a server manually and having to refresh the browser tab every time you want to see your changes, you can install Visual Studio Code's "Live Server" extension and have it all be taken care of for you:
+3. Start Visual Studio Code's "Live Server" extension. If you don't have it installed:
    1. Click on the extensions icons in the left-hand side navigation.
    2. Search for "Live Server".
    3. Click install next to the extension by "Ritwick Dey". You may have to reload the window.
 
       ![Live Server](./images/Live-Server.png)
 
-   4. Once it's installed, click "Go Live" on the bottom right of the window. This should start the server and automatically open a new tab in your browser at `http://127.0.0.1:5500/` (or whatever URL/port it says in VSC).
+   4. Once it's installed, click "Go Live" on the bottom right of the window. This should start the server and automatically open a new tab in your browser at `http://127.0.0.1:5500/` (or whatever port it says on your machine).
       - The files the server serves will be relative to the directory you had open in VSC when you hit "Go Live".
-
-4. Alternatively, you can run the server manually without installing "Live Server":
-   1. Open the VSC terminal (`` CTRL + ` ``) and run `npx http-server` (assuming you have NodeJS installed, if you don't, [download and install it from here](https://nodejs.org)) inside the root folder of the repo.
-   2. In your browser, navigate to `http://localhost:8080` (or whatever the URL is that is displayed in the terminal).
 
 ## 🌅 Angry-Birds-0 (The "Day-0" Update)
 
@@ -195,8 +191,8 @@ A constraint is made up of 4 main parts:
 ![Constraint Diagram](./images/Constraint.png)
 
 1. [`constraint.bodyA`](https://brm.io/matter-js/docs/classes/Constraint.html#property_bodyA): The first possible `Body` that this constraint is attached to.
-2. [`constraint.pointA`](https://brm.io/matter-js/docs/classes/Constraint.html#property_pointA): A `Vector` that specifies the offset of the constraint from center of the constraint.`bodyA` if defined, otherwise a world-space position.
-3. [`constraint.pointB`](https://brm.io/matter-js/docs/classes/Constraint.html#property_pointB): A `Vector` that specifies the offset of the constraint from center of the constraint.`bodyB` if defined, otherwise a world-space position.
+2. [`constraint.pointA`](https://brm.io/matter-js/docs/classes/Constraint.html#property_pointA): A `Vector` that specifies the offset of the constraint from center of the `constraint.bodyA` if defined, otherwise a world-space position.
+3. [`constraint.pointB`](https://brm.io/matter-js/docs/classes/Constraint.html#property_pointB): A `Vector` that specifies the offset of the constraint from center of the `constraint.bodyB` if defined, otherwise a world-space position.
 4. [`constraint.bodyB`](https://brm.io/matter-js/docs/classes/Constraint.html#property_bodyB): The second possible `Body` that this constraint is attached to.
 
 ### Important Functions
@@ -264,7 +260,7 @@ Another important operation of a queue is getting the element at the front calle
 ### Important Code
 
 - `./src/objects/BirdQueue.js`: Uses the Queue data structure to keep an ordered array of birds. The order is relevant since the bird at the front of the queue is the one that gets loaded into the slingshot.
-  - `BirdQueue::initializeQueue(birdTypes)`: Uses the passed-in array of `BirdType` enums to make calls to the `BirdFactory`. Positions the birds up in a nice orderly line behind the slingshot. The bird at the front of the queue is placed at the slingshot's location.
+  - `BirdQueue::initializeQueue(birdTypes)`: Uses the passed-in array of `BirdType` enums to make calls to the `BirdFactory` and positions the birds up in a nice orderly line behind the slingshot. The bird at the front of the queue is placed at the slingshot's location.
 
     ```javascript
     initializeQueue(birdTypes) {
@@ -357,7 +353,7 @@ In this update, we introduce rectangular dynamic bodies to represent the blocks 
   ```javascript
   // globals.js
   export const engine = matter.Engine.create({
-      enableSleeping: false
+      enableSleeping: true
   });
   ```
 
@@ -372,7 +368,7 @@ In this update, we introduce rectangular dynamic bodies to represent the blocks 
 
 ### Density
 
-- [`Body.density`](https://brm.io/matter-js/docs/classes/Body.html#property_density): A number that defines the density of the body, that is its mass per unit area. If you pass the density via `Body.create` the `mass` property is automatically calculated for you based on the size (area) of the object. This is generally preferable to simply setting mass and allows for more intuitive definition of materials (e.g. rock has a higher density than wood). Has a default value of `0.001`.
+- [`Body.density`](https://brm.io/matter-js/docs/classes/Body.html#property_density): A number that defines the density of the body, that is its mass per unit area. If you pass the density via `Body.create` the `mass` property is automatically calculated for you based on the size (area) of the object. This is preferable rather than explicitly setting mass and allows for more intuitive definition of materials (e.g. rock has a higher density than wood). Given a rock body and a wood body that were the exact same size, the rock would be heavier than the wood. This property has a default value of `0.001`.
 - `damageThreshold` is now a property added to the body in `GameEntity` which is calculated using the body's mass. We don't specify the mass directly - Matter calculates the mass of an object based on its size and `density` values.
 
 ![Block Density](./images/Block-Density.gif)
@@ -505,7 +501,7 @@ In this update, we add levels for the player to progress through.
 
 ## ✨ Angry-Birds-7 (The "Polish" Update)
 
-In this update, we add sprites, sounds, fonts, and a little animation for the birds to give them a bit more personality.
+In this update, we add sprites, sounds, fonts, and a little behaviour for the birds to give them a bit more personality!
 
 ### Important Functions
 
@@ -551,7 +547,7 @@ In this update, we add sprites, sounds, fonts, and a little animation for the bi
     ```
 
 - `Bird::isWaiting` and `Bird::isJumping` are the two booleans that will control the little jump the bird does occasionally while waiting their turn in the queue.
-  - The actual "jump" is not a tween - we're actually applying a tiny negative Y force to the bird:
+  - The actual "jump" is not a tween - we're applying a tiny negative Y force to the bird:
 
     ```javascript
     // Bird.js
@@ -560,7 +556,7 @@ In this update, we add sprites, sounds, fonts, and a little animation for the bi
     }
     ```
 
-  - Make sure you understand how this function works since you'll have to use it for the assignment!
+  - Make sure you understand how this function works since you'll have to **use it for the assignment**!
 
 And with that, we have a fully functioning game of Angry Birds!
 

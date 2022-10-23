@@ -92,8 +92,8 @@ export default class Fortress {
 
 	/**
 	 * Iterates over all the bodies that were flagged for removal
-	 * and sets their shouldCleanUp property to true as well as
-	 * removes them from the Matter world.
+	 * and sets their shouldCleanUp property to true which will
+	 * remove them from the Matter world.
 	 */
 	removeBodies() {
 		this.bodiesToRemove.forEach((body) => {

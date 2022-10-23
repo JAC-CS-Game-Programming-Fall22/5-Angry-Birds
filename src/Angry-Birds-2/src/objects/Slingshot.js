@@ -39,6 +39,7 @@ export default class Slingshot {
 	constructor() {
 		this.bird = new Bird(Slingshot.LOCATION.x, Slingshot.LOCATION.y);
 		this.wasLaunched = false;
+		this.trajectoryPoints = [];
 
 		this.initializeSling();
 		this.initializeTrajectory();
@@ -263,7 +264,6 @@ export default class Slingshot {
 	 * be used to display the bird's approximate trajectory.
 	 */
 	initializeTrajectory() {
-		this.trajectoryPoints = [];
 		this.shouldCalculateTrajectory = false;
 
 		for (let i = 0; i < Slingshot.TRAJECTORY.points; i++) {

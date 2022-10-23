@@ -21,6 +21,9 @@ const {
 export default class PlayState extends State {
 	constructor() {
 		super();
+
+		this.birds = [];
+		this.ground = new Ground();
 	}
 
 	enter() {
